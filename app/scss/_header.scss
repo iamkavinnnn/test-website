@@ -1,13 +1,14 @@
 .header {
+   
+   background: $light-pink;
 
    nav {
-      padding: 24px;
+      padding: 10px 24px;
    }
 
    &__logo {
         img {
-           width: 100px;
-           
+           width: 8.8125rem;
         }
    } 
 
@@ -25,8 +26,22 @@
    }
 
    &__links {
+      
+      border: 2px solid red;
+
       a {
          font-size: $font-sm;
+         color: white;
+         font-weight: 500;
+         transition: color 300ms ease-in-out;
+
+         &:not(:last-child) {
+            margin-right: 4em;
+         }
+
+         &:hover {
+            color: $dark-grey;
+         }
       }
    }
 }
