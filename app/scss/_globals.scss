@@ -51,6 +51,12 @@ button, .button {
     border-radius: 50px;
     cursor: pointer;
     font-weight: 800;
+    transition: padding 400ms ease-in-out, opacity 400ms ease-in-out;
+
+    &:hover {
+        padding: 1.1rem 2.2rem;
+        opacity: 0.75;
+    }
 }
 
 //Visibility

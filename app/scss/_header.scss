@@ -16,20 +16,34 @@
       > span {
          display: block;
          width: 26px;
-         height: 2px;
+         height: 3px;
+         border-radius: 50px;
          background-color: $black;
 
          &:not(:last-child) {
-            margin-bottom: 3px;
+            margin-bottom: 5px;
+         }
+      }
+
+      &.open {
+         > span:first-child {
+            transform: rotate(45deg);
+         }
+
+         > span:nth-child(2) {
+            opacity: 0;
+         }
+
+         > span:last-child {
+            transform: rotate(-45deg);
          }
       }
    }
 
    &__links {
-      
-      border: 2px solid red;
 
       a {
+         position: relative;
          font-size: $font-sm;
          color: white;
          font-weight: 500;
@@ -39,8 +53,25 @@
             margin-right: 4em;
          }
 
+         &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            height: 5px;
+            left: 0;
+            right: 0;
+            bottom: -34px;
+            background: linear-gradient(45deg, $pink, $dark-pink);
+            opacity: 0;
+            transition: opacity 300ms ease-in-out;
+         }
+
          &:hover {
             color: $dark-grey;
+
+            &::after {
+               opacity: 1;
+            }
          }
       }
    }
