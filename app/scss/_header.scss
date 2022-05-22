@@ -19,6 +19,8 @@
          height: 3px;
          border-radius: 50px;
          background-color: $black;
+         transition: all 400ms ease-in-out;
+         transform-origin: 2px 2px;
 
          &:not(:last-child) {
             margin-bottom: 5px;
@@ -75,4 +77,14 @@
          }
       }
    }
+}
+
+.overlay {
+   background: linear-gradient(225deg, red, transparent);
+   position: fixed;
+   top: 80px;
+   left: 0;
+   right: 0;
+   bottom: 0;
+
 }
