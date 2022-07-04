@@ -1,0 +1,124 @@
+.header {
+
+
+   &.open {
+      .overlay {
+         display: block;
+      } 
+
+
+      .header__menu {
+         > span:first-child {
+         transform: rotate(45deg);
+         }
+
+         > span:nth-child(2) {
+            opacity: 0;
+         }
+
+         > span:last-child {
+            transform: rotate(-45deg);
+         }
+      }
+      
+   }
+
+   .overlay {
+      visibility: hidden;
+      position: fixed;
+      background: linear-gradient(#503e4d, transparent);
+      top: 5rem;
+      left: 0;
+      right: 0;
+      bottom: 0;
+   }
+
+   nav {
+      height: 5rem;
+      padding: 0.625em 1.5em;
+      background: $light-pink;
+   }
+
+   &__logo {
+        img {
+           width: 8.8125rem;
+        }
+   } 
+
+   &__menu {
+      > span {
+         display: block;
+         width: 26px;
+         height: 3px;
+         border-radius: 50px;
+         background-color: $black;
+         transition: all 400ms ease-in-out;
+         transform-origin: 2px 2px;
+
+         &:not(:last-child) {
+            margin-bottom: 5px;
+         }
+      }
+   }
+
+   &__list {
+
+      z-index: 0;
+
+      visibility: hidden;
+      position:absolute;
+      top: 104px;
+      right: 20px;
+      left: 20px;
+
+      background: white;
+      padding: 1.25rem 4.25rem;
+      border-radius: 5px;
+      a {
+         display: block;
+         padding: 1.625rem;
+         text-align: center;
+
+         &:not(:last-child) {
+            border-bottom: 1px solid rgb(194, 192, 192); 
+         }
+      }
+   }
+
+   &__links {
+
+      a {
+         position: relative;
+         font-size: $font-sm;
+         color: white;
+         font-weight: 500;
+         transition: color 300ms ease-in-out;
+
+         &:not(:last-child) {
+            margin-right: 4em;
+         }
+
+         &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            height: 5px;
+            left: 0;
+            right: 0;
+            bottom: -1.875rem;
+            background: linear-gradient(45deg, $pink, $dark-pink);
+            opacity: 0;
+            transition: opacity 300ms ease-in-out;
+         }
+
+         &:hover {
+            color: $dark-grey;
+
+            &::after {
+               opacity: 1;
+            }
+         }
+      }
+   }
+}
+
